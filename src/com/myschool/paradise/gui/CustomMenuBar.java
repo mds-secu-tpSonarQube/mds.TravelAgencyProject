@@ -14,8 +14,10 @@ public class CustomMenuBar extends JMenuBar {
 	JMenuItem theJMI_AddTrip ; 
 	JMenuItem theJMI_Quit ; 
 	
+	/**
+	 * Create the MenuBar without the "Quit" option
+	 */
 	public CustomMenuBar() {
-		
 		this.theJMI_AddPlace = new JMenuItem("Add a Place"); 
 		this.theJMI_AddPlace.addActionListener(new ActionListener() {
 			@Override
@@ -38,8 +40,11 @@ public class CustomMenuBar extends JMenuBar {
 		this.setVisible(true);
 	}
 	
+	/**
+	 * Create the MenuBar with the "Quit" option
+	 * @param context The JFrame that will be close at "Quit" option. The good use is to pass "this".
+	 */
 	public CustomMenuBar(JFrame context) {
-		
 		this.theJMI_AddPlace = new JMenuItem("Add a Place"); 
 		this.theJMI_AddPlace.addActionListener(new ActionListener() {
 			@Override
