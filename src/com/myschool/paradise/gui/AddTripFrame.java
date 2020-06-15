@@ -64,13 +64,13 @@ public class AddTripFrame extends JFrame {
 		
 		GridBagConstraints gbc = new GridBagConstraints();
 		gbc.fill = GridBagConstraints.HORIZONTAL ; 
+		gbc.weightx = 1 ; 
 		
 		this.pan_thePanel1 = new JPanel(this.theGBLayout);
 		
 //		this.pan_thePanel1.setSize(Globals.ASKBOX_DIMENSIONS); 
 		gbc.gridx = 0 ;
 		gbc.gridy = 0 ; 
-//		gbc.weightx = 0.5 ; 
 		this.pan_thePanel1.add(this.label_from, gbc);
 		gbc.gridx = 1 ;
 		gbc.gridy = 0 ; 
