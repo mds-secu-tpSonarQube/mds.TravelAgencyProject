@@ -164,5 +164,6 @@ public class AddTripFrame extends JFrame {
 		this.add(pan_thePanel1, BorderLayout.PAGE_START);
 		this.add(pan_thePanel2, BorderLayout.SOUTH);
 		this.setVisible(true);
+		this.setJMenuBar(new CustomMenuBar(this));
 	}
 }

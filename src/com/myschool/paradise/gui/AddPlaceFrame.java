@@ -54,5 +54,6 @@ public class AddPlaceFrame extends JFrame {
 		
 		setContentPane(this.pan_thePanel);
 		this.setVisible(true);
+		this.setJMenuBar(new CustomMenuBar(this));
 	}
 }

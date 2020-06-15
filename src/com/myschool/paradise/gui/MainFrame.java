@@ -15,6 +15,10 @@ import javax.swing.border.Border;
 
 import com.myschool.paradise.util.Globals;
 
+/**
+ * @deprecated the {@link DashBoardFrame} JFrame is used instead.
+ * @author c
+ */
 public class MainFrame extends JFrame {
 	JButton jButt2 ; 
 	
