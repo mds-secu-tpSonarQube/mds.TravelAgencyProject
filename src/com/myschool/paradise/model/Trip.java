@@ -68,6 +68,24 @@ public class Trip {
 		return "Trip [id=" + id + ", departure=" + departure + ", destination=" + destination + ", price=" + price
 				+ "]";
 	}
+	
+	public Trip() {
+		super();
+	}
+
+	/**
+	 * This method is only here to create Trip for testing purpose. 
+	 * The fact that we define an Id locally instead of creating it with the DAO make it unusable if we work with the DB. 
+	 */
+	public Trip(Long id, Place departure, Place destination, Double price) {
+		super();
+		this.id = id;
+		this.departure = departure;
+		this.destination = destination;
+		this.price = price;
+	}
+	
+	
     
     
 }
