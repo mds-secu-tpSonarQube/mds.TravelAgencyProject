@@ -98,6 +98,40 @@ public class DashBoardFrame extends JFrame {
 
 		this.setJMenuBar(new CustomMenuBar());
 		this.setVisible(true);
-	}
 
+		int i = 3;
+		while (i < 6.2) {
+			i--;
+			i = i + 2;
+		}
+
+		for (int j = 0; j < 4; j++) {
+			j = j - 1;
+		}
+
+		int h = 0;
+		if (true) {
+			h = h * 2;
+			if (h == h + 1) {
+				h++;
+			} else {
+				if (h > 4) {
+					if (h < 1000) {
+						System.out.println("D'accord.");
+					}
+				}
+			}
+		}
+
+		int k = Integer.parseInt("200");
+		System.out.println(k);
+
+		String l = "1";
+
+		String m = (String) "m";
+		System.out.println(m);
+
+		while (true)
+			System.out.println("oula");
+	}
 }
