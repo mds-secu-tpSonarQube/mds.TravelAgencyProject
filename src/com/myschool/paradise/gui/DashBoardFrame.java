@@ -36,68 +36,65 @@ public class DashBoardFrame extends JFrame {
 	JButton theJButt_refresh;
 
 	public DashBoardFrame() {
-		// Fire a test for sorting by Price. 
+		// Fire a test for sorting by Price.
 		TravelTableModel.test_bubbleSortByPrice();
-		
-		// 
-		this.setSize(new Dimension(600,400));
+
+		//
+		this.setSize(new Dimension(600, 400));
 		this.setTitle("Travel Agency - Dashboard");
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 		// Get the DAO
-		this.theJDBC = (JdbcTripDao) DaoFactory.getTripDao(); 
+		this.theJDBC = (JdbcTripDao) DaoFactory.getTripDao();
 
 		//
 		GridBagConstraints gbc = new GridBagConstraints();
-		gbc.fill = GridBagConstraints.BOTH ; 
-		gbc.weightx = 1 ; 
-		JPanel thePanel = new JPanel( new GridBagLayout() );
+		gbc.fill = GridBagConstraints.BOTH;
+		gbc.weightx = 1;
+		JPanel thePanel = new JPanel(new GridBagLayout());
 
-		
 		// Set the table adapter
-		TravelTableModel adapter = new TravelTableModel(theJDBC.findAllTrips()); 
-		this.theJT = new JTable(adapter); 
-		
-		
-		// Set the listner that will fire the sorting functions 
-		
-		//		// really bad auto sorting method
-		//		this.theJT.setAutoCreateRowSorter(true);
-		
+		TravelTableModel adapter = new TravelTableModel(theJDBC.findAllTrips());
+		this.theJT = new JTable(adapter);
+
+		// Set the listner that will fire the sorting functions
+
+		// // really bad auto sorting method
+		// this.theJT.setAutoCreateRowSorter(true);
+
 		theJT.getTableHeader().addMouseListener(new MouseAdapter() {
 			@Override
-		    public void mouseClicked(MouseEvent e) {
-		        int col = theJT.columnAtPoint(e.getPoint());
-		        String name = theJT.getColumnName(col);
-		        System.out.println("Column index selected " + col + " " + name);
-		        if (col == 3)  
-		        	adapter.bubbleSortByPrice();		        	
-		        if (col == 0)  
-		        	adapter.bubbleSortById();		        	
-		    }
+			public void mouseClicked(MouseEvent e) {
+				int col = theJT.columnAtPoint(e.getPoint());
+				String name = theJT.getColumnName(col);
+				System.out.println("Column index selected " + col + " " + name);
+				if (col == 3)
+					adapter.bubbleSortByPrice();
+				if (col == 0)
+					adapter.bubbleSortById();
+			}
 		});
 
-		
-		gbc.gridx = 0 ;
-		gbc.gridy = 0 ; 
-		gbc.weighty = 3 ; 
-		thePanel.add(new JScrollPane(theJT) , gbc);
+		gbc.gridx = 0;
+		gbc.gridy = 0;
+		gbc.weighty = 3;
+		thePanel.add(new JScrollPane(theJT), gbc);
 
 		// add button & set the Listener
 		this.theJButt_refresh = new JButton("Refresh");
 		theJButt_refresh.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				adapter.setTheTrips(theJDBC.findAllTrips()); 
+				adapter.setTheTrips(theJDBC.findAllTrips());
 			}
 		});
 
-		gbc.gridx = 0 ;
-		gbc.gridy = 1 ; 
-		gbc.weighty = 1 ; 
-		thePanel.add(theJButt_refresh , gbc);
+		gbc.gridx = 0;
+		gbc.gridy = 1;
+		gbc.weighty = 1;
+		thePanel.add(theJButt_refresh, gbc);
 
-		this.add(thePanel) ;
+		this.add(thePanel);
 
 		this.setJMenuBar(new CustomMenuBar());
 		this.setVisible(true);
