@@ -2,8 +2,8 @@
 
 ## Set Up
 
-1. Import this directory to Eclipse.
-2. Import the database from `/java_paradise.sql`
+1. Import the database from `/java_paradise.sql`
+2. Import this directory to Eclipse, or run it with the VSCode debugger (run *com.myschool.paradise.launcher.GUILauncher*).
 
 ## Launch SonarQube
 
